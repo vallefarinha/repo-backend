@@ -1,26 +1,33 @@
-<img src="path/to/your/icon.png" alt="Icon" width="50"/> Task Manager
-Project Description
-This project is a feature-rich task management application developed to meet the organizational and tracking needs of both individual users and work teams. The primary goal is to provide an efficient solution for organizing, tracking, and completing tasks and projects in a digital environment.
+# 🚀 Task Management App
 
-Features
-✔️ Add Task: Allows users to add new tasks with detailed information such as title, description, and due date.
-🖊️ Edit Task: Enables the modification of details for an existing task, such as title, description, and due date.
-🗑️ Delete Task: Offers the option to delete a specific task from the list.
-📋 View All Tasks: Presents a complete list of all registered tasks, sorted by due date.
-✅ Mark Task as Completed: Allows users to mark a task as completed for better progress tracking.
-📅 Sort Tasks by Date: Facilitates an ordered view of tasks based on the due date.
-Technologies Used
-💻 Language: PHP
-🏗️ Architecture: Model-View-Controller (MVC)
-📦 Dependency Manager: Composer
+## Description
+This app provides an effective solution for task management, allowing users to organize their daily activities in a simple and intuitive way.
 
-Installation
-🔄 Clone the repository: git clone https://github.com/vallefarinha/repo-backend/to-do-list-php.git
-📦 Install dependencies using Composer: composer install
-⚙️ Configure database information in the configuration file.
+## 🌟 Key Features
+- Addition, editing, deletion, and viewing of tasks.
+- Marking tasks as completed.
+- Sorting tasks by due date.
+- User-friendly and intuitive graphical interface.
 
-Contribution
-Feel free to contribute with improvements, bug fixes, or new features. Open an issue for discussion or submit a pull request.
+## 🛠 Technologies Used
+- PHP
+- MVC (Model-View-Controller)
+- Composer for dependency management
 
-License
-This project is licensed under the 📝 MIT License.
+## 🚀 Installation
+1. Clone the repository: `git clone https://github.com/vallefarinha/repo-backend/to-do-list-php.git`
+2. Install dependencies: `composer install`
+3. Configure the database in the `config.php` file.
+4. Import the database schema from the `database.sql` file.
+
+## 🚀 How to Use
+1. Run the app on a PHP server.
+2. Access the app through the browser.
+3. Register your tasks, manage your list, and enjoy more efficient organization.
+
+## 🤝 Contribution
+Contributions are welcome! Feel free to open issues and submit pull requests.
+
+## 📝 License
+This project is licensed under the [MIT License](LICENSE).
+
