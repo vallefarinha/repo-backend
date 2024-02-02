@@ -1,0 +1,17 @@
+{
+    "name": "gabri/things-to-do",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Gabriela Farinha",
+            "email": "vallefarinha@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "Database\\": "database/",
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
