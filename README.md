@@ -6,7 +6,6 @@ This app provides an effective solution for task management, allowing users to o
 ## 🌟 Key Features
 - Addition, editing, deletion, and viewing of tasks.
 - Marking tasks as completed.
-- Sorting tasks by due date.
 - User-friendly and intuitive graphical interface.
 
 ## 🛠 Technologies Used
