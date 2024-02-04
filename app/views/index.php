@@ -32,11 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../public/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/46cac75c44.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../public/css/style.css">
+
 
     <title>To Do List</title>
 </head>
@@ -59,13 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
             <?php foreach ($tasks as $task) : ?>
 
             <div class="task" id="drag" draggable="true" data-task-id="<?= $task['id'] ?>">
-                <form action="" method="POST" class="update-progress-form">
-                    <input type="hidden" name="id" value="<?= $task['id'] ?>">
-                    <input type="hidden" name="completed" value="<?= $task['completed'] ? '1' : '0' ?>">
-                    <input type="checkbox" name="progress" class="progress" <?= $task['completed'] ? 'checked' : '' ?>
-                        onchange="this.form.submit()">
-                </form>
-                <p class="task-description"><?php echo $task['task']; ?></p>
+                <input type="checkbox" name="progress" class="progress visually-hidden" id="checkbox_<?= $task['id'] ?>"
+                    <?= $task['completed'] ? 'checked' : '' ?> />
+                <label for="checkbox_<?= $task['id'] ?>" class="task-check"></label>
+                <p class="task-description"><?= $task['task']; ?></p>
                 <div class="task-actions">
                     <a class="action-button edit-button"><i class="fa-regular fa-pen-to-square"></i></a>
 
@@ -90,8 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
 
             </<div>
     </main>
-
-    <script src="../../public/script/script.js"></script>
     <script src="../../public/script/dragDiv.js"></script>
 </body>
 

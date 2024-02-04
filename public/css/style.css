@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('../../src/assets/img/abstract-textured-backgound.jpg');
+    background-image: url("../../src/assets/img/abstract-textured-backgound.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -73,18 +73,28 @@ body {
     gap: 12px;
     max-height: 400px;
     overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #8c5d797c #191933;
 }
 
 .task {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     color: #262626;
     background-color: #191933;
     padding: 8px 12px;
     border-radius: 4px;
-    cursor: grab
+    word-wrap: break-word;
+    box-sizing: border-box;
+    cursor: grab;
 }
+
+.task input.progress:checked+.task-description,
+.task input.progress:checked~.task-description {
+    text-decoration: line-through;
+    color: rgba(50, 39, 58, 0.464);
+}
+
 
 .task.dragging {
     cursor: grab;
@@ -98,9 +108,14 @@ body {
 
 .task .task-description {
     font-size: 16px;
-    color: #FFFfFF;
+    color: #ffffff;
     padding: 4px 0px;
     width: 100%;
+    word-wrap: break-word;
+}
+
+.no-tasks-available {
+    color: #e5f9ff;
 }
 
 .task .task-actions {
@@ -125,7 +140,7 @@ body {
     display: none !important;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     #to-do {
         width: 300px;
     }
