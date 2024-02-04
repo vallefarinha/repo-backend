@@ -83,21 +83,17 @@ body {
     background-color: #191933;
     padding: 8px 12px;
     border-radius: 4px;
-    cursor: grab 
+    cursor: grab
 }
 
-.task.dragging{
+.task.dragging {
     cursor: grab;
 }
 
-.task .progress {
+.update-progress-form,
+.progress {
     margin-right: 10px;
     cursor: pointer;
-}
-
-.task .progress.done + .task-description {
-    text-decoration: line-through;
-    color: #e5f9ffa7;
 }
 
 .task .task-description {

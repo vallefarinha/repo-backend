@@ -9,6 +9,7 @@ use PDOException;
 require __DIR__ . '../../../vendor/autoload.php';
 require __DIR__ . '../../models/TaskModel.php';
 
+
 class TaskController
 {
     public function index()
@@ -47,21 +48,17 @@ class TaskController
 
     public function updateProgress()
     {
-        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = filter_input(INPUT_POST, 'id');
             $completed = filter_input(INPUT_POST, 'completed');
-            echo 'ID: ' . $id . '<br>';
-            echo 'Completed: ' . $completed . '<br>';
-            $completed = ($completed === '1') ? true : false;
-
+            $completed = ($completed === '1') ? '0' : '1';
+    
             if ($id !== null) {
                 $taskModel = new TaskModel();
                 $taskModel->updateProgressTask($completed, $id);
-                echo json_encode(['success' => true]);
+                header('Location: ' . $_SERVER['PHP_SELF']);
                 exit;
             } else {
-                echo json_encode(['success' => false]);
                 exit;
             }
         }
