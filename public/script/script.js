@@ -17,18 +17,23 @@ $(document).ready(function () {
 
     $('.progress').on('change', function () {
         const id = $(this).data('task-id');
-        const completed = $(this).is(':checked') ? 'true' : 'false';
+        const completed = $(this).is(':checked') ? 1 : 0;
+        console.log('ID:', id);
+        console.log('Completed:', completed);
         $.ajax({
-            url: '../../../things-to-do/app/controllers/TaskController.php',
+            url: '../../app/controllers/TaskController.php',
             method: 'POST',
             data: {id: id, completed: completed},
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-
+                    console.log('Tarefa atualizada com sucesso.');
                 } else {
                     alert('Erro ao editar a tarefa');
                 }
+            },
+            error: function () {
+                alert('Erro ao conectar ao servidor');
             },
         });
     })

@@ -74,12 +74,9 @@ class TaskModel {
 
     public function deleteTask($id) {
         try {
-             
             $sql = $this->pdo->prepare("DELETE FROM todolist WHERE id=:id");
             $sql->bindValue(':id', $id);
             $sql->execute();
-    
-        
         } catch (PDOException $e) {
             echo "Erro: " . $e->getMessage();
             return false; 

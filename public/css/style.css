@@ -83,6 +83,11 @@ body {
     background-color: #191933;
     padding: 8px 12px;
     border-radius: 4px;
+    cursor: grab 
+}
+
+.task.dragging{
+    cursor: grab;
 }
 
 .task .progress {
@@ -90,7 +95,7 @@ body {
     cursor: pointer;
 }
 
-.task .progress.done+.task-description {
+.task .progress.done + .task-description {
     text-decoration: line-through;
     color: #e5f9ffa7;
 }

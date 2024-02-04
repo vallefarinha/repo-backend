@@ -11,7 +11,6 @@ require __DIR__ . '../../models/TaskModel.php';
 
 class TaskController
 {
-
     public function index()
     {
         try {
@@ -34,7 +33,6 @@ class TaskController
         }
     }
 
-
     public function update()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -49,14 +47,18 @@ class TaskController
 
     public function updateProgress()
     {
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = filter_input(INPUT_POST, 'id');
             $completed = filter_input(INPUT_POST, 'completed');
-            if ($id && $completed !== null) {
+            echo 'ID: ' . $id . '<br>';
+            echo 'Completed: ' . $completed . '<br>';
+            $completed = ($completed === '1') ? true : false;
+
+            if ($id !== null) {
                 $taskModel = new TaskModel();
                 $taskModel->updateProgressTask($completed, $id);
                 echo json_encode(['success' => true]);
-                header('Location: ' . $_SERVER['PHP_SELF']);
                 exit;
             } else {
                 echo json_encode(['success' => false]);
@@ -64,7 +66,6 @@ class TaskController
             }
         }
     }
-
 
     public function delete()
     {
