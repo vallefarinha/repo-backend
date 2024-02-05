@@ -80,21 +80,22 @@ body {
 .task {
     display: flex;
     align-items: center;
+    width: 100%;
     color: #262626;
     background-color: #191933;
     padding: 8px 12px;
     border-radius: 4px;
     word-wrap: break-word;
     box-sizing: border-box;
+    justify-content: space-between;
     cursor: grab;
 }
 
-.task input.progress:checked+.task-description,
-.task input.progress:checked~.task-description {
+
+input:checked+.task-description {
     text-decoration: line-through;
     color: rgba(50, 39, 58, 0.464);
 }
-
 
 .task.dragging {
     cursor: grab;
@@ -104,6 +105,7 @@ body {
 .progress {
     margin-right: 10px;
     cursor: pointer;
+    display: flex;
 }
 
 .task .task-description {
@@ -111,6 +113,7 @@ body {
     color: #ffffff;
     padding: 4px 0px;
     width: 100%;
+    max-width: 265px;
     word-wrap: break-word;
 }
 

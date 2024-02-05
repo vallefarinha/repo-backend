@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
 
         <form action="" class="to-do-form" method="POST">
             <input type="text" name="description" placeholder="Write your task here" required />
-
             <button type="submit" class="form-button">
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -60,10 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
             <?php foreach ($tasks as $task) : ?>
 
             <div class="task" id="drag" draggable="true" data-task-id="<?= $task['id'] ?>">
-                <input type="checkbox" name="progress" class="progress visually-hidden" id="checkbox_<?= $task['id'] ?>"
-                    <?= $task['completed'] ? 'checked' : '' ?> />
-                <label for="checkbox_<?= $task['id'] ?>" class="task-check"></label>
-                <p class="task-description"><?= $task['task']; ?></p>
+                <form action="" method="POST" class="update-progress-form">
+                    <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                    <input type="hidden" name="completed" value="<?= $task['completed'] ? '1' : '0' ?>">
+                    <input type="checkbox" name="completed" class="progress" <?= $task['completed'] ? 'checked' : '' ?>
+                        onchange="this.form.submit()">
+                    <p class="task-description"><?= $task['task']; ?></p>
+
+                </form>
                 <div class="task-actions">
                     <a class="action-button edit-button"><i class="fa-regular fa-pen-to-square"></i></a>
 

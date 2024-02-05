@@ -51,7 +51,7 @@ class TaskController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = filter_input(INPUT_POST, 'id');
             $completed = filter_input(INPUT_POST, 'completed');
-            $completed = ($completed === '1') ? '0' : '1';
+            $completed = ($completed === '1') ? '0' : '1'; 
     
             if ($id !== null) {
                 $taskModel = new TaskModel();
@@ -59,6 +59,7 @@ class TaskController
                 header('Location: ' . $_SERVER['PHP_SELF']);
                 exit;
             } else {
+                echo "Erro: ID não fornecido.";
                 exit;
             }
         }

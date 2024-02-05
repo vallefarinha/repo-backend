@@ -6,4 +6,5 @@ $(document).ready(function () {
         task.find('.task-actions').addClass('hidden');
         task.find('.edit-task').removeClass('hidden');
     });
+
 });
