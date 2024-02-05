@@ -89,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && $_GET['act
             </<div>
     </main>
     <script src="../../public/script/dragDiv.js"></script>
+    <script src="../../public/script/script.js"></script>
 </body>
 
 </html>
